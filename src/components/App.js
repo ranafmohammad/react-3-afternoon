@@ -32,18 +32,16 @@ axios
   axios
   .put(`https://practiceapi.devmountain.com/api/posts?id=${ id }`, {text})
   .then( results => {
-    this.setState({post: results.data})
+    this.setState({posts: results.data})
   })
   }
 
   deletePost( id ) {
-axios
-.delete ('https://practiceapi.devmountain.com/api/posts?id=${ id ')
-.then( results => {
-  this.setState({ posts: results.data});
-})
+    axios.delete(`https://practiceapi.devmountain.com/api/posts?id=${ id }`).then( results => {
+      this.setState({ posts: results.data });
+    });
   }
-
+  
   createPost(text) {
 axios
 .post( 'https://practiceapi.devmountain.com/api/posts' , {text})
